@@ -44,6 +44,7 @@
 #include <moveit/robot_state/conversions.h>
 #include <moveit/utils/message_checks.h>
 #include <fmt/format.h>
+#include <fmt/ranges.h>
 
 namespace {
 
