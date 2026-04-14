@@ -20,7 +20,7 @@ add_library(${PROJECT_NAME} SHARED
    src/execute_task_solution_capability.cpp
 )
 target_link_libraries(${PROJECT_NAME} PUBLIC
-  fmt
+  fmt::fmt
   ${rclcpp_action_TARGETS}
   ${moveit_core_TARGETS}
   ${moveit_ros_move_group_TARGETS}

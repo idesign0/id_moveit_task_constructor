@@ -38,7 +38,7 @@ add_library(${PROJECT_NAME} SHARED
 	solvers/multi_planner.cpp
 )
 target_link_libraries(${PROJECT_NAME}
-	fmt
+	fmt::fmt
 	${moveit_core_TARGETS}
 	${moveit_ros_planning_TARGETS}
 	${moveit_ros_planning_interface_TARGETS}
