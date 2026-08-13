@@ -39,6 +39,7 @@
 #pragma once
 
 #include <Eigen/Core>
+#include <fmt/format.h>
 #include <fmt/core.h>
 #include <fmt/ostream.h>
 

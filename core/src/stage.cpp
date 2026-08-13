@@ -36,6 +36,7 @@
 /* Authors: Michael Goerner, Robert Haschke */
 
 #include <moveit/task_constructor/stage_p.h>
+#include <fmt/format.h>
 #include <moveit/task_constructor/container_p.h>
 #include <moveit/task_constructor/introspection.h>
 #include <moveit/task_constructor/fmt_p.h>
