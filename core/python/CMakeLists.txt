@@ -21,7 +21,13 @@ if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/pybind11/CMakeLists.txt")
 	execute_process(COMMAND git submodule init WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 	execute_process(COMMAND git submodule update WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
-add_subdirectory(pybind11)
+# py_binding_tools already find_package(pybind11), so the system pybind11 targets
+# (pybind11::pybind11_headers/headers/module) exist; building the bundled pybind11
+# would re-create them -> "cannot create ALIAS target ... already exists". Only add
+# the bundle when the system pybind11 is not present.
+if(NOT TARGET pybind11::pybind11_headers AND NOT TARGET pybind11::headers)
+  add_subdirectory(pybind11)
+endif()
 
 # C++ wrapper code
 add_subdirectory(bindings)
